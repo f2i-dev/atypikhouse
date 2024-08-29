@@ -23,7 +23,7 @@ const Search = () => {
       return getByValue(locationValue as string)?.label;
     }
 
-    return 'Anywhere';
+    return "N'importe où";
   }, [locationValue, getByValue]);
 
   const durationLabel = useMemo(() => {
@@ -36,18 +36,18 @@ const Search = () => {
         diff = 1;
       }
 
-      return `${diff} Days`;
+      return `${diff} Jours`;
     }
 
-    return 'Any Week'
+    return "N'importe quelle semaine";
   }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
     if (guestCount) {
-      return `${guestCount} Guests`;
+      return `${guestCount} Personnes`;
     }
 
-    return 'Add Guests';
+    return 'Nombre de personnes';
   }, [guestCount]);
 
   return ( 
@@ -58,7 +58,7 @@ const Search = () => {
         w-full 
         md:w-auto 
         py-2 
-        rounded-full 
+        rounded
         shadow-sm 
         hover:shadow-md 
         transition 
@@ -112,7 +112,7 @@ const Search = () => {
           <div 
             className="
               p-2 
-              bg-rose-500 
+              bg-green-600
               rounded-full 
               text-white
             "

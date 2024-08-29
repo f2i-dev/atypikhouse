@@ -51,7 +51,7 @@ const LoginModal = () => {
       setIsLoading(false);
 
       if (callback?.ok) {
-        toast.success('Logged in');
+        toast.success('Connecté');
         router.refresh();
         loginModal.onClose();
       }
@@ -70,8 +70,8 @@ const LoginModal = () => {
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading
-        title="Welcome back"
-        subtitle="Login to your account!"
+        title="Content de te revoir"
+        subtitle="Connectez-vous à votre compte!"
       />
       <Input
         id="email"
@@ -83,7 +83,7 @@ const LoginModal = () => {
       />
       <Input
         id="password"
-        label="Password"
+        label="Mot de passe"
         type="password"
         disabled={isLoading}
         register={register}
@@ -96,21 +96,21 @@ const LoginModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button 
+      {/* <Button 
         outline 
         label="Continue with Google"
         icon={FcGoogle}
         onClick={() => signIn('google')}
-      />
-      <Button 
+      /> */}
+      {/* <Button 
         outline 
         label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => signIn('github')}
-      />
+      /> */}
       <div className="
       text-neutral-500 text-center mt-4 font-light">
-        <p>First time using Airbnb?
+        <p>Première utilisation de Atypik House ?
           <span 
             onClick={onToggle} 
             className="
@@ -118,7 +118,7 @@ const LoginModal = () => {
               cursor-pointer 
               hover:underline
             "
-            > Create an account</span>
+            > Créer un compte</span>
         </p>
       </div>
     </div>
@@ -128,8 +128,8 @@ const LoginModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title="Login"
-      actionLabel="Continue"
+      title="Se connecter"
+      actionLabel="Continuer"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}

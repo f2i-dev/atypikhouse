@@ -64,8 +64,8 @@ const RegisterModal= () => {
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading
-        title="Welcome to Airbnb"
-        subtitle="Create an account!"
+        title="Bienvenue sur Atypik House"
+        subtitle="Créer un compte!"
       />
       <Input
         id="email"
@@ -77,7 +77,7 @@ const RegisterModal= () => {
       />
       <Input
         id="name"
-        label="Name"
+        label="Nom"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -85,7 +85,7 @@ const RegisterModal= () => {
       />
       <Input
         id="password"
-        label="Password"
+        label="Mot de passe"
         type="password"
         disabled={isLoading}
         register={register}
@@ -98,18 +98,18 @@ const RegisterModal= () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button 
+      {/* <Button 
         outline 
         label="Continue with Google"
         icon={FcGoogle}
         onClick={() => signIn('google')} 
-      />
-      <Button 
+      /> */}
+      {/* <Button 
         outline 
         label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => signIn('github')}
-      />
+      /> */}
       <div 
         className="
           text-neutral-500 
@@ -118,7 +118,7 @@ const RegisterModal= () => {
           font-light
         "
       >
-        <p>Already have an account?
+        <p>Vous avez déjà un compte?
           <span 
             onClick={onToggle} 
             className="
@@ -126,7 +126,7 @@ const RegisterModal= () => {
               cursor-pointer 
               hover:underline
             "
-            > Log in</span>
+            > Se connecter</span>
         </p>
       </div>
     </div>
@@ -136,8 +136,8 @@ const RegisterModal= () => {
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Register"
-      actionLabel="Continue"
+      title="Inscription"
+      actionLabel="Continuer"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}

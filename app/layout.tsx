@@ -13,8 +13,8 @@ import ClientOnly from './components/ClientOnly';
 import getCurrentUser from './actions/getCurrentUser';
 
 export const metadata = {
-  title: 'Airbnb',
-  description: 'Airbnb Clone',
+  title: 'Atypik House',
+  description: 'Trouvez des locations d\'habitations insolites en France et on Europe avec Atypik House. Découvrez des bulles, cabanes et plus pour une expérience unique et mémorable.',
 }
 
 const font = Nunito({ 

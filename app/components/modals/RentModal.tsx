@@ -98,14 +98,14 @@ const RentModal = () => {
 
     axios.post('/api/listings', data)
     .then(() => {
-      toast.success('Listing created!');
+      toast.success('Logement enregistré!');
       router.refresh();
       reset();
       setStep(STEPS.CATEGORY)
       rentModal.onClose();
     })
     .catch(() => {
-      toast.error('Something went wrong.');
+      toast.error('Il y a eu un problème.');
     })
     .finally(() => {
       setIsLoading(false);
@@ -114,10 +114,10 @@ const RentModal = () => {
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.PRICE) {
-      return 'Create'
+      return 'Créer'
     }
 
-    return 'Next'
+    return 'Suivant'
   }, [step]);
 
   const secondaryActionLabel = useMemo(() => {
@@ -125,14 +125,14 @@ const RentModal = () => {
       return undefined
     }
 
-    return 'Back'
+    return 'Retour'
   }, [step]);
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes your place?"
-        subtitle="Pick a category"
+        title="Quel type de logement avez-vous besoin de louer ?"
+        subtitle="Choisissez une catégorie"
       />
       <div 
         className="
@@ -163,8 +163,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Where is your place located?"
-          subtitle="Help guests find you!"
+          title="Quelle est votre localisation ?"
+          subtitle="Choisissez une zone"
         />
         <CountrySelect 
           value={location} 
@@ -179,28 +179,28 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Share some basics about your place"
-          subtitle="What amenitis do you have?"
+          title="Quelque information sur votre logement ?"
+          subtitle="Ces informations seront publiques"
         />
         <Counter 
           onChange={(value) => setCustomValue('guestCount', value)}
           value={guestCount}
-          title="Guests" 
-          subtitle="How many guests do you allow?"
+          title="Invités" 
+          subtitle="Nombre d'invités autorisés?"
         />
         <hr />
         <Counter 
           onChange={(value) => setCustomValue('roomCount', value)}
           value={roomCount}
-          title="Rooms" 
-          subtitle="How many rooms do you have?"
+          title="Nombre de pièces" 
+          subtitle="combien de pièces dans votre logement?"
         />
         <hr />
         <Counter 
           onChange={(value) => setCustomValue('bathroomCount', value)}
           value={bathroomCount}
-          title="Bathrooms" 
-          subtitle="How many bathrooms do you have?"
+          title="Nombre de salles de bains" 
+          subtitle="combien de salles de bains dans votre logement?"
         />
       </div>
     )
@@ -210,8 +210,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your place"
-          subtitle="Show guests what your place looks like!"
+          title="Ajoutez quelques images de votre logement"
+          subtitle="Ces images seront visibles pour les autres utilisateurs!"
         />
         <ImageUpload
           onChange={(value) => setCustomValue('imageSrc', value)}
@@ -225,12 +225,12 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="How would you describe your place?"
-          subtitle="Short and sweet works best!"
+         title="Comment décririez-vous votre logement ?"
+          subtitle="Court et simple fonctionne le mieux !"
         />
         <Input
           id="title"
-          label="Title"
+          label="Titre"
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -253,12 +253,12 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Now, set your price"
-          subtitle="How much do you charge per night?"
+          title="Quel est le prix de votre logement ?"
+          subtitle="Combien facturez-vous par nuit ?"
         />
         <Input
           id="price"
-          label="Price"
+          label="Prix"
           formatPrice 
           type="number" 
           disabled={isLoading}
@@ -274,7 +274,7 @@ const RentModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={rentModal.isOpen}
-      title="Airbnb your home!"
+      title="AtypikHouse - Louer votre logement"
       actionLabel={actionLabel}
       onSubmit={handleSubmit(onSubmit)}
       secondaryActionLabel={secondaryActionLabel}

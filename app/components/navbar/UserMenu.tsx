@@ -58,7 +58,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             cursor-pointer
           "
         >
-          Airbnb your home
+          Créer une annonce
         </div>
         <div 
         onClick={toggleOpen}
@@ -102,40 +102,46 @@ const UserMenu: React.FC<UserMenuProps> = ({
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
+                <MenuItem onClick={() => {}} classn='text-green-700 uppercase' label={currentUser.name || 'Utilisateur'} />
+                <MenuItem onClick={() => router.push('/profil')} label="Mon Profil" />
                 <MenuItem 
-                  label="My trips" 
+                  label="Mes voyages" 
                   onClick={() => router.push('/trips')}
                 />
                 <MenuItem 
-                  label="My favorites" 
+                  label="Mes favoris" 
                   onClick={() => router.push('/favorites')}
                 />
                 <MenuItem 
-                  label="My reservations" 
+                  label="Mes Réservations" 
                   onClick={() => router.push('/reservations')}
                 />
                 <MenuItem 
-                  label="My properties" 
+                  label="Mes Annonces" 
                   onClick={() => router.push('/properties')}
                 />
                 <MenuItem 
-                  label="Airbnb your home" 
-                  onClick={rentModal.onOpen}
+                  label="Historiques des Réservations" 
+                  onClick={() => router.push('/properties')}
                 />
+                {/* <MenuItem 
+                  label="creer une anonce" 
+                  onClick={rentModal.onOpen}
+                /> */}
                 <hr />
                 <MenuItem 
-                  label="Logout" 
+                  label="Se déconnecter" 
                   onClick={() => signOut()}
                 />
               </>
             ) : (
               <>
                 <MenuItem 
-                  label="Login" 
+                  label="Connexion" 
                   onClick={loginModal.onOpen}
                 />
                 <MenuItem 
-                  label="Sign up" 
+                  label="Inscription" 
                   onClick={registerModal.onOpen}
                 />
               </>

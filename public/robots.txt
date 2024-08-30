@@ -1,0 +1,4 @@
+#palcer dans le repo pablic
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:

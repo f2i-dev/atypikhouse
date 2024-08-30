@@ -23,7 +23,7 @@ const navLinks = [
   },
   {
     link: "/annonces",
-    label: "Annpnces",
+    label: "Annonces",
     icon: Clock4Icon,
   },
   // {

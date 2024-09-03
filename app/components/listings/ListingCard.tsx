@@ -95,7 +95,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
               transition
             "
             src={data.imageSrc}
-            alt="Listing"
+            alt="habitation"
           />
           <div className="
             absolute
@@ -109,6 +109,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
           </div>
         </div>
         <div className="font-semibold text-lg">
+          {/* {data.title} <br /> */}
           {location?.region}, {location?.label}
         </div>
         <div className="font-light text-neutral-500">
@@ -116,10 +117,10 @@ const ListingCard: React.FC<ListingCardProps> = ({
         </div>
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">
-            $ {price}
+           {price} € 
           </div>
           {!reservation && (
-            <div className="font-light">night</div>
+            <div className="font-light"> /nuit</div>
           )}
         </div>
         {onAction && actionLabel && (

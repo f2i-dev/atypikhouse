@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
       res.status(200).json(deletedListing);
     } catch (error) {
-      res.status(500).json({ message: 'Failed to delete listing' });
+      res.status(500).json({ message: 'Impossible de supprimer la liste' });
     }
   } else {
     res.status(405).json({ message: 'Méthode Non Autorisée' });

@@ -122,7 +122,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem 
                   label="Historiques des Réservations" 
-                  onClick={() => router.push('/properties')}
+                  onClick={() => router.push('/historique')}
                 />
                 {/* <MenuItem 
                   label="creer une anonce" 

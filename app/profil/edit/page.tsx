@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/app/components/Button';
 import ImageUpload from '@/app/components/inputs/ImageUpload';
+import Breadcrumb from '@/app/components/Breadcrumb'; // Import du fil d'Ariane
 
 const EditProfilePage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // const [image, setImage] = useState('');
   const [imageSrc, setImageSrc] = useState('');
   const router = useRouter();
 
@@ -34,15 +34,25 @@ const EditProfilePage = () => {
       router.push('/profil');
     }
   };
+
   const goback = () => {
     router.back();
   };
+
+  const breadcrumbItems = [
+    { label: 'Accueil', href: '/' },
+    { label: 'Profil', href: '/profil' },
+    { label: 'Modifier le profil', href: '/profil/edit' },
+  ];
 
   return (
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto inset-0 outline-none">
       <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-full lg:h-auto md:h-auto">
         
         <div className="container mx-auto p-4">
+          {/* Ajout du fil d'Ariane */}
+          <Breadcrumb items={breadcrumbItems} />
+
           <h1 className="text-2xl text-center font-bold mb-4">Modifier le profil</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

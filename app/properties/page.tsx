@@ -1,6 +1,6 @@
-
 import EmptyState from "@/app/components/EmptyState";
 import ClientOnly from "@/app/components/ClientOnly";
+import Breadcrumb from "@/app/components/Breadcrumb"; // Import du composant Breadcrumb
 
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getListings from "@/app/actions/getListings";
@@ -30,14 +30,23 @@ const PropertiesPage = async () => {
     );
   }
 
+  // Ajout du fil d'Ariane
+  const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Propriétés", href: "/properties" }
+  ];
+
   return (
     <ClientOnly>
-      <PropertiesClient
-        listings={listings}
-        currentUser={currentUser}
-      />
+      <div>
+        <Breadcrumb items={breadcrumbItems} /> {/* Fil d'Ariane ajouté ici */}
+        <PropertiesClient
+          listings={listings}
+          currentUser={currentUser}
+        />
+      </div>
     </ClientOnly>
   );
 }
- 
+
 export default PropertiesPage;

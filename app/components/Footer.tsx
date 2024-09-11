@@ -23,6 +23,7 @@ const Footer = () => {
             <li><a href="/cgu" className="text-white hover:underline">CGU</a></li>
             {/* <li><a href="/messages" className="text-white hover:underline">Mes messages</a></li> */}
             <li><a href="/apropos" className="text-white hover:underline">A propos</a></li>
+            <li><a href="/mentions" className="text-white hover:underline">Mentions legales</a></li>
           </ul>
         </div>
 

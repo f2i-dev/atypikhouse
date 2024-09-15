@@ -17,7 +17,7 @@ import CookieConsentModal from './components/modals/CookieConsentModal';
 
 export const metadata = {
   title: 'Atypik House',
-  description: 'Trouvez des locations d\'habitations insolites en France et on Europe avec Atypik House. Découvrez des bulles, cabanes et plus pour une expérience unique et mémorable.',
+  description: 'Des locations d\'habitations insolites',
 }
 
 const font = Nunito({ 

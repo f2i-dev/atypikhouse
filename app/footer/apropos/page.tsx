@@ -10,7 +10,7 @@ const Apropos = () => {
       {/* Hero Section */}
       <header className="relative h-60">
         <Image
-          src="/images/nature.png"
+          src="/images/nature.jpeg"
           layout="fill"
           objectFit="cover"
           alt="AtypikHouse Nature"

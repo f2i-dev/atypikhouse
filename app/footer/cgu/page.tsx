@@ -71,7 +71,21 @@ const CGUPage = () => {
               <section className="bg-white p-6 rounded-lg shadow-lg mb-8">
                   <h2 className="text-2xl font-semibold text-green-700 mb-4">Article 7 - Protection des données personnelles</h2>
                   <p>
-                      Pour toute information sur la collecte et l’utilisation des données personnelles, veuillez-vous référer à notre politique de confidentialité disponible sur notre site web.
+                  Les données personnelles collectées sont utilisées pour fournir les services du site, assurer sa sécurité, et peuvent être partagées avec des tiers dans certaines circonstances. L&apos;utilisateur bénéficie de droits concernant ses données personnelles (accès, rectification, suppression, opposition, portabilité).
+                  </p>
+              </section>
+
+              <section className="bg-white p-6 rounded-lg shadow-lg mb-8">
+                  <h2 className="text-2xl font-semibold text-green-700 mb-4"> Article 8 - Cookies</h2>
+                  <p>
+                    Le site utilise des cookies pour améliorer l&apos;expérience utilisateur et à des fins statistiques. L&apos;utilisateur peut désactiver les cookies depuis les paramètres de son navigateur.
+                  </p>
+              </section>
+
+              <section className="bg-white p-6 rounded-lg shadow-lg mb-8">
+                  <h2 className="text-2xl font-semibold text-green-700 mb-4"> Article 9 - Loi applicable</h2>
+                  <p>
+                    Les conditions générales d&apos;utilisation sont régies par le droit français. En cas de litige non résolu à l&apos;amiable, les tribunaux français seront compétents.
                   </p>
               </section>
           </main>

@@ -8,13 +8,14 @@ import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
+import { SafeListing, SafeReservation, SafeUser, SafeComment } from "@/app/types";
 
 import Container from "@/app/components/Container";
 import { categories } from "@/app/components/navbar/Categories";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
+import CommentSection from "@/app/components/listings/CommentSection";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -37,6 +38,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
+  const [comments, setComments] = useState<SafeComment[]>([]);
 
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
@@ -163,6 +165,13 @@ const ListingClient: React.FC<ListingClientProps> = ({
               />
             </div>
           </div>
+          <CommentSection
+            listingId={listing.id}
+            currentUser={currentUser}
+            comments={comments}
+            setComments={setComments}
+            listingUserId={listing.user.id}
+          />
         </div>
       </div>
     </Container>

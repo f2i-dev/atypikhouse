@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
-    "@paypal/react-paypal-js": "^8.6.0",
+    "@paypal/react-paypal-js": "^8.7.0",
     "@prisma/client": "^5.19.1",
     "@semantic-release/npm": "^11.0.3",
     "@types/node": "18.15.5",

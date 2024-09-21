@@ -14,6 +14,7 @@ import ClientOnly from './components/ClientOnly';
 import getCurrentUser from './actions/getCurrentUser';
 import Footer from './components/Footer';
 import CookieConsentModal from './components/modals/CookieConsentModal';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Atypik House',
@@ -32,7 +33,20 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
 
   return (
-    <html lang="en">
+    <html lang="fr">
+      <head>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-3EPXKZHTQN" ></Script>
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-3EPXKZHTQN');
+        `}
+      </Script>
+      </head>
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />

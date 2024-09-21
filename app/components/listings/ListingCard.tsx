@@ -6,7 +6,12 @@ import { format } from "date-fns";
 import Image from "next/image";
 import HeartButton from "../HeartButton";
 import Button from "../Button";
-import ClientOnly from "../ClientOnly";
+import PayPalButton from "@/app/components/PayPalButton";
+
+interface LocationValue {
+    region?: string;
+    label?: string;
+}
 
 interface ListingCardProps {
     data: SafeListing & { locationValue: LocationValue | string };

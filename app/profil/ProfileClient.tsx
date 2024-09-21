@@ -44,7 +44,7 @@ const ProfileClient: React.FC<ProfileClientProps> = ({ currentUser }) => {
             <div className="relative w-[90px] h-[90px] overflow-hidden rounded-full">
               <Image
                 src={currentUser.image || '/images/placeholder.jpg'}
-                alt="Profile"
+                alt="Profile user"
                 layout="fill"
                 objectFit="cover"
                 className="absolute inset-0"

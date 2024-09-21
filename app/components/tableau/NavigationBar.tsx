@@ -78,7 +78,7 @@ function Navbar() {
       </div>
 
       <div className="logo-div flex space-x-4 items-center">
-        <Image src="/images/logo.png" alt="Logo" className="ml-2" width={150} height={150} />
+        <Image src="/images/logo.png" alt="Logo_atypik house" className="ml-2" width={150} height={150} />
         <span className={!isExpanded ? "hidden" : "block"}></span>
       </div>
 

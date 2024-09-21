@@ -23,7 +23,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         ${classn}
       `}
     >
-      {label}
+      <h3>{label}</h3>
     </div>
    );
 }

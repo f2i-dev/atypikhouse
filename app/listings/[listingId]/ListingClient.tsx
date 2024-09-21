@@ -16,7 +16,7 @@ import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 import CommentSection from "@/app/components/listings/CommentSection";
-
+import { getComments } from "@/app/actions/getComments";
 const initialDateRange = {
   startDate: new Date(),
   endDate: new Date(),
@@ -111,6 +111,16 @@ const ListingClient: React.FC<ListingClientProps> = ({
       }
     }
   }, [dateRange, listing.price]);
+
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const fetchedComments = await getComments(listing.id);
+      console.log("Fetched comments:", fetchedComments);
+      setComments(fetchedComments);
+    };
+    fetchComments();
+  }, [listing.id]);
 
   return ( 
     <Container>

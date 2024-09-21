@@ -41,3 +41,29 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Failed to create comment" }, { status: 500 });
   }
 }
+
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const listingId = searchParams.get("listingId");
+
+  if (!listingId) {
+    return NextResponse.json({ error: "L'ID de l'annonce est requis" }, { status: 400 });
+  }
+
+  try {
+    const comments = await prisma.comment.findMany({
+      where: {
+        listingId,
+      },
+      include: {
+        user: true,
+      },
+    });
+
+    return NextResponse.json(comments);
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    return NextResponse.json({ error: "Failed to fetch comments" }, { status: 500 });
+  }
+}

@@ -3,7 +3,7 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://www.atypikhouse.com/</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Page des propriétés -->
   <url>
-    <loc>https://www.atypikhouse.com/properties</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/properties</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
   <!-- Page des réservations -->
   <url>
-    <loc>https://www.atypikhouse.com/reservations</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/reservations</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Page des voyages -->
   <url>
-    <loc>https://www.atypikhouse.com/trips</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/trips</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- Page de profil -->
   <url>
-    <loc>https://www.atypikhouse.com/profile</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/profile</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -43,28 +43,28 @@
 
   <!-- Page des mentions légales -->
   <url>
-    <loc>https://www.atypikhouse.com/mentions</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/mentions</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <!-- Page cgv -->
   <url>
-    <loc>https://www.atypikhouse.com/mentions</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/cgv</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <!-- Page cgu -->
   <url>
-    <loc>https://www.atypikhouse.com/mentions</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/cgu</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <!-- Page A propos -->
   <url>
-    <loc>https://www.atypikhouse.com/mentions</loc>
+    <loc>https://www.f2i-dev03-sg-sd-uf.fr/apropos</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

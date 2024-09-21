@@ -6,13 +6,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import HeartButton from "../HeartButton";
 import Button from "../Button";
-import PayPalButton from "../PayPalButton";
-
-
-interface LocationValue {
-    region?: string;
-    label?: string;
-}
+import ClientOnly from "../ClientOnly";
 
 interface ListingCardProps {
     data: SafeListing & { locationValue: LocationValue | string };

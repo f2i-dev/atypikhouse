@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -31,6 +31,16 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isOpen) {
+      timer = setTimeout(() => {
+        setIsOpen(false);
+      }, 7000); // 7 seconds
+    }
+    return () => clearTimeout(timer);
+  }, [isOpen]);
 
   const onRent = useCallback(() => {
     if (!currentUser) {

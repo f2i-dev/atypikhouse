@@ -1,19 +1,20 @@
 import Container from "@/app/components/Container";
 import ListingCard from "@/app/components/listings/ListingCard";
 import EmptyState from "@/app/components/EmptyState";
-
-import getListings, { 
-  IListingsParams
-} from "@/app/actions/getListings";
+import getListings, { IListingsParams } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
+import Pagination from "@/app/components/Pagination";
 
 interface HomeProps {
-  searchParams: IListingsParams
-};
+  searchParams: IListingsParams;
+}
 
 const Home = async ({ searchParams }: HomeProps) => {
-  const listings = await getListings(searchParams);
+  const page = parseInt((searchParams.page as unknown as string) || "1"); // Récupère la page courante
+  const limit = 5; // Nombre d'éléments par page
+
+  const { listings, totalPages } = await getListings({ ...searchParams, page, limit });
   const currentUser = await getCurrentUser();
 
   if (listings.length === 0) {
@@ -27,7 +28,7 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <ClientOnly>
       <Container>
-        <div 
+        <div
           className="
             pt-24
             grid 
@@ -48,9 +49,10 @@ const Home = async ({ searchParams }: HomeProps) => {
             />
           ))}
         </div>
+        <Pagination currentPage={page} totalPages={totalPages} /> {/* Ajoute la pagination ici */}
       </Container>
     </ClientOnly>
-  )
-}
+  );
+};
 
 export default Home;

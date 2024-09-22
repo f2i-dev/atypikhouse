@@ -83,6 +83,9 @@ const Modal: React.FC<ModalProps> = ({
           focus:outline-none
           bg-neutral-800/70
         "
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
       >
         <div className="
           relative 
@@ -143,6 +146,7 @@ const Modal: React.FC<ModalProps> = ({
                     left-9
                   "
                   onClick={handleClose}
+                  aria-label="Close modal"
                 >
                   <IoMdClose size={18} />
                 </button>

@@ -47,12 +47,8 @@ const Input: React.FC<InputProps> = ({
             {formatPrice && (
                 <BiEuro
                     size={24}
-                    className="
-                        text-neutral-700
-                        absolute
-                        top-5
-                        left-2
-                    "
+                    className="text-neutral-700 absolute top-5 left-2"
+                    aria-hidden="true"
                 />
             )}
             <input 
@@ -78,8 +74,11 @@ const Input: React.FC<InputProps> = ({
                     ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
                     ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
                 `}
+                aria-invalid={errors[id] ? "true" : "false"}
+                aria-describedby={`${id}-error`}
             />
             <label
+                htmlFor={id}
                 className={`
                     absolute
                     text-md
@@ -100,7 +99,7 @@ const Input: React.FC<InputProps> = ({
                 {label}
             </label>
             {errors[id] && errors[id]?.type === "validate" && (
-                <span className="text-rose-500 text-sm">
+                <span id={`${id}-error`} className="text-rose-500 text-sm" role="alert">
                     {type === "email" ? "Veuillez entrer une adresse e-mail valide." : 
                         type === "password" ? "Le mot de passe doit contenir entre 5 et 10 caractères, incluant au moins une lettre, un chiffre et un caractère spécial." :
                             ""

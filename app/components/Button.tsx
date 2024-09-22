@@ -39,6 +39,9 @@ const Button: React.FC<ButtonProps> = ({
         ${small ? 'font-light' : 'font-semibold'}
         ${small ? 'border-[1px]' : 'border-2'}
       `}
+      aria-disabled={disabled}
+      role="button"
+      aria-label={label}
     >
       {Icon && (
         <Icon
@@ -48,6 +51,7 @@ const Button: React.FC<ButtonProps> = ({
             left-4
             top-3
           "
+          aria-hidden="true"
         />
       )}
       {label}
